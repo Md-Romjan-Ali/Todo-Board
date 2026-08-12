@@ -63,7 +63,7 @@ export default function TasksSection() {
 
                 {/* See All Tasks Button */}
                 <Link
-                    href="/tasks"
+                    href="/all-task"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-800 dark:text-slate-200 bg-white/20 dark:bg-black/30 hover:bg-white/30 dark:hover:bg-black/50 border border-white/20 backdrop-blur-md shadow-sm transition-all hover:scale-105 active:scale-95 w-fit"
                 >
                     <span>See All Tasks ({tasks.length})</span>

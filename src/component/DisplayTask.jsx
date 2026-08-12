@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaCalendarAlt, FaClock, FaExclamationCircle } from 'react-icons/fa';
+import { UpdateAndDeleteButton } from './UpdateAndDeleteButton';
 
-const DisplayTask = ({ task, statusStyle, priorityStyle }) => {
+const DisplayTask = ({ task, statusStyle, priorityStyle, tasks }) => {
     return (
         <div>
             <div
@@ -14,12 +15,14 @@ const DisplayTask = ({ task, statusStyle, priorityStyle }) => {
                         <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${statusStyle.color}`}>
                             {statusStyle.icon}
                             <span>{task.status}</span>
+
                         </span>
 
                         <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border uppercase tracking-wider ${priorityStyle}`}>
                             <FaExclamationCircle className="w-2.5 h-2.5" />
                             <span>{task.priority}</span>
                         </span>
+                        <UpdateAndDeleteButton id={task.id} />
                     </div>
 
                     {/* Task Title */}
