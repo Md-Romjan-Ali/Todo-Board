@@ -10,7 +10,7 @@ import Logo from './Logo';
 
 const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'All Task', href: '/tasks' },
+    { label: 'All Task', href: '/all-task' },
 ];
 
 export default function Navbar() {

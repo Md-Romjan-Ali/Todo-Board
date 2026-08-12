@@ -10,8 +10,8 @@ const Logo = () => {
                 <div className="p-2.5 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-200">
                     <LuLayoutDashboard className="w-5 h-5" />
                 </div>
-                <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                    todo<span className="text-indigo-600 dark:text-indigo-400">-board</span>
+                <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+                    Todo<span className="text-indigo-600 dark:text-indigo-400">-Board</span>
                 </span>
             </Link>
         </div>

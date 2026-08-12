@@ -3,9 +3,7 @@
 import Link from 'next/link';
 import {
     FaArrowRight,
-    FaCalendarAlt,
     FaClock,
-    FaExclamationCircle,
     FaSpinner,
     FaCheckCircle,
     FaTasks
@@ -14,6 +12,7 @@ import DisplayTask from './DisplayTask';
 
 // Default initial tasks array if LocalStorage is empty
 export default function TasksSection() {
+
     const tasks = JSON.parse(localStorage.getItem("tasks") || [])
 
     // Helper for Status Badge Styling
