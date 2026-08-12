@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaPlus, FaTasks, FaCheckCircle, FaStar } from 'react-icons/fa';
+import { AddTaskModal } from './AddTaskModal';
 
 export default function Hero() {
     return (
@@ -22,7 +23,7 @@ export default function Hero() {
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-3xl mx-auto leading-tight">
                     Manage your tasks with{' '}
                     <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                        todo-board
+                        Todo-Board
                     </span>
                 </h1>
 
@@ -33,16 +34,10 @@ export default function Hero() {
 
                 {/* Action Buttons */}
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button
-                        type="button"
-                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
-                    >
-                        <FaPlus className="w-3.5 h-3.5" />
-                        <span>Create New Task</span>
-                    </button>
+                    <AddTaskModal />
 
                     <Link
-                        href="/tasks"
+                        href="/all-task"
                         className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white/10 dark:bg-black/20 hover:bg-white/20 dark:hover:bg-white/10 border border-white/20 backdrop-blur-md rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
                     >
                         <FaTasks className="w-3.5 h-3.5 text-indigo-500" />

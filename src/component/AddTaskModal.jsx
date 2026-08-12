@@ -1,21 +1,19 @@
 "use client";
 
 import { Button, Modal, Surface, } from "@heroui/react";
-import { BiEnvelope } from "react-icons/bi";
+import { useRouter } from "next/navigation";
+import { BiEnvelope, BiPlus } from "react-icons/bi";
 
 
 export function AddTaskModal() {
+    const router = useRouter()
     const handleSubmit = (event) => {
         event.preventDefault();
-
         const form = event.target;
         const formData = new FormData(form);
-
         const taskData = Object.fromEntries(formData.entries());
-
         // Get existing tasks
         const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
         // Add id and created time
         const newTask = {
             id: Date.now(),
@@ -27,15 +25,16 @@ export function AddTaskModal() {
         existingTasks.push(newTask);
 
         localStorage.setItem("tasks", JSON.stringify(existingTasks));
-
         console.log("Saved:", newTask);
-
-        // Reset form
+        // Reset fom
         form.reset();
+        router.refresh()
     };
     return (
         <Modal>
-            <Button variant="secondary">Add-Task</Button>
+            <Button variant="secondary" className={'flex items-center gap-2'}>
+                <BiPlus className="w-4 h-4" />
+                Add-Task</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { LuLayoutDashboard } from 'react-icons/lu';
 import { BiCheckSquare, BiHome, BiMenu, BiPlus, BiX } from 'react-icons/bi';
 import { AddTaskModal } from './AddTaskModal';
+import Logo from './Logo';
 
 const navItems = [
     { label: 'Home', href: '/' },
@@ -47,17 +48,7 @@ export default function Navbar() {
                 <div className="relative flex items-center justify-between h-16 px-4 md:px-6 rounded-2xl border border-white/20 bg-white/10 dark:bg-black/20 backdrop-blur-xl shadow-2xl transition-colors duration-300">
 
                     {/* Left Side: Logo & Brand Name */}
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg p-1"
-                    >
-                        <div className="p-2 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 group-active:scale-95 transition-transform duration-200">
-                            <LuLayoutDashboard className="w-5 h-5" />
-                        </div>
-                        <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
-                            todo-board
-                        </span>
-                    </Link>
+                    <Logo />
 
                     {/* Center Side: Navigation Links (Desktop) */}
                     <ul className="hidden md:flex items-center gap-1">
@@ -82,13 +73,10 @@ export default function Navbar() {
 
                     {/* Right Side: Add Task Button (Desktop) */}
                     <div className="hidden md:block">
-                        <button
-                            type="button"
-                            className="flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-linear-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/25 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
-                        >
-                            <BiPlus className="w-4 h-4" />
-                            <AddTaskModal />
-                        </button>
+
+
+                        <AddTaskModal />
+
                     </div>
 
                     {/* Mobile Layout */}
