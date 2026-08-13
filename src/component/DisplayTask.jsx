@@ -2,7 +2,8 @@ import React from 'react';
 import { FaCalendarAlt, FaClock, FaExclamationCircle } from 'react-icons/fa';
 import { UpdateAndDeleteButton } from './UpdateAndDeleteButton';
 
-const DisplayTask = ({ task, statusStyle, priorityStyle, tasks }) => {
+const DisplayTask = ({ task, statusStyle, priorityStyle }) => {
+
     return (
         <div>
             <div
@@ -22,7 +23,7 @@ const DisplayTask = ({ task, statusStyle, priorityStyle, tasks }) => {
                             <FaExclamationCircle className="w-2.5 h-2.5" />
                             <span>{task.priority}</span>
                         </span>
-                        <UpdateAndDeleteButton id={task.id} />
+
                     </div>
 
                     {/* Task Title */}
@@ -50,6 +51,10 @@ const DisplayTask = ({ task, statusStyle, priorityStyle, tasks }) => {
                         <span>{new Date(task.createdAt).toLocaleDateString()}</span>
                     </div>
                 </div>
+                <div className='mt-5'>
+                    <UpdateAndDeleteButton id={task.id} />
+                </div>
+
             </div>
         </div>
     );

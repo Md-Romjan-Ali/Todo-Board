@@ -1,7 +1,7 @@
 'use client';
 
 import DisplayTask from '@/component/DisplayTask';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
     FaSearch,
     FaFilter,
@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa';
 
 export default function AllTasksSection() {
+
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('All');
 

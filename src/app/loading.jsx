@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FaLayoutDashboard, FaSpinner } from 'react-icons/fa';
+import { FaSpinner } from 'react-icons/fa';
+import { LuLayoutDashboard } from 'react-icons/lu';
 
 export default function Loading() {
     return (
@@ -19,14 +20,14 @@ export default function Loading() {
 
                     {/* Main App Icon */}
                     <div className="relative p-4 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white shadow-xl shadow-indigo-500/30">
-                        <FaLayoutDashboard className="w-8 h-8 animate-bounce" />
+                        <LuLayoutDashboard className="w-8 h-8 animate-bounce" />
                     </div>
                 </div>
 
                 {/* Text Details */}
                 <div className="flex flex-col gap-1">
                     <h2 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                        todo<span className="text-indigo-600 dark:text-indigo-400">-board</span>
+                        Todo<span className="text-indigo-600 dark:text-indigo-400">-Board</span>
                     </h2>
                     <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                         Loading your tasks...

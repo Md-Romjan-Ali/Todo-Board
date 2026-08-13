@@ -1,8 +1,7 @@
-'use client';
 
 import React from 'react';
 import Link from 'next/link';
-import { FaHome, FaExclamationTriangle, FaSearch } from 'react-icons/fa';
+import { FaExclamationTriangle, FaHome, FaSearch } from 'react-icons/fa';
 
 export default function NotFound() {
     return (
@@ -27,10 +26,10 @@ export default function NotFound() {
                         Error 404
                     </span>
                     <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                        Task Not Found
+                        Page Not Found
                     </h1>
                     <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xs mx-auto leading-relaxed mt-1">
-                        The page or task item you are looking for doesn't exist or has been moved to another board.
+                        The page or task item you are looking for doesn`t exist or has been moved to another board.
                     </p>
                 </div>
 
@@ -45,7 +44,7 @@ export default function NotFound() {
                     </Link>
 
                     <Link
-                        href="/tasks"
+                        href="/all-task"
                         className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white/10 dark:bg-black/20 hover:bg-white/20 dark:hover:bg-white/10 border border-white/20 backdrop-blur-md rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
                     >
                         <FaSearch className="w-3.5 h-3.5 text-indigo-500" />

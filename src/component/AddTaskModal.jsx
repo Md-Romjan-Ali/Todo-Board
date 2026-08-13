@@ -1,11 +1,12 @@
 "use client";
 
 import { Button, Modal, Surface, } from "@heroui/react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { BiEnvelope, BiPlus } from "react-icons/bi";
 
 
 export function AddTaskModal() {
+    const pathName = usePathname()
     const router = useRouter()
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,9 +27,7 @@ export function AddTaskModal() {
 
         localStorage.setItem("tasks", JSON.stringify(existingTasks));
         console.log("Saved:", newTask);
-        // Reset fom
-        form.reset();
-        router.refresh()
+        window.location.reload();
     };
     return (
         <Modal>
