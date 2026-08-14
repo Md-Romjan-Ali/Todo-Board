@@ -83,7 +83,7 @@ export default function Navbar() {
                     {/* Mobile Layout */}
                     <div className="flex items-center gap-2 md:hidden">
                         {/* Mobile Add Task Button */}
-                        <AddTaskModal />
+
 
                         {/* Mobile Hamburger Toggle */}
                         <button
@@ -126,7 +126,7 @@ export default function Navbar() {
                                 <BiCheckSquare className="w-4 h-4" />
                                 <span>All Task</span>
                             </Link>
-
+                            <AddTaskModal />
                         </div>
                     )}
 

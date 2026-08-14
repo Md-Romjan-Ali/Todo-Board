@@ -1,19 +1,17 @@
 "use client";
 
 import { Button, Modal } from "@heroui/react";
-import { usePathname, useRouter } from "next/navigation";
 import { BiRocket } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 export function DeleteModal({ id }) {
-    const pathName = usePathname()
-    const router = useRouter()
     const deleteTask = () => {
         const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 
         const newTasks = tasks.filter(
             item => item.id !== id
         );
-
+        toast.error('Deleted task')
         localStorage.setItem("tasks", JSON.stringify(newTasks));
         window.location.reload();
 
