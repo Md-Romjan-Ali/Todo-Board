@@ -1,5 +1,5 @@
 'use client';
-
+import { motion } from "motion/react"
 import React from 'react';
 import Link from 'next/link';
 import { FaPlus, FaTasks, FaCheckCircle, FaStar } from 'react-icons/fa';
@@ -7,7 +7,15 @@ import { AddTaskModal } from './AddTaskModal';
 
 export default function Hero() {
     return (
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <motion.section
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1,
+                transition: { duration: 1 }
+            }}
+            className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
             {/* Background Decorative Blur Gradients */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 blur-[120px] rounded-full pointer-events-none" />
 
@@ -62,6 +70,6 @@ export default function Hero() {
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { revalidatepath } from "@/lib/revalidatepath";
 import { Button, Modal } from "@heroui/react";
 import { usePathname, useRouter } from "next/navigation";
 import { BiRocket } from "react-icons/bi";
@@ -9,10 +8,10 @@ export function DeleteModal({ id }) {
     const pathName = usePathname()
     const router = useRouter()
     const deleteTask = () => {
-        const tasks = JSON.parse(localStorage.getItem("tasks") || []);
+        const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 
         const newTasks = tasks.filter(
-            task => task.id !== id
+            item => item.id !== id
         );
 
         localStorage.setItem("tasks", JSON.stringify(newTasks));

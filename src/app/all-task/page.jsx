@@ -1,7 +1,7 @@
 'use client';
-
+import { motion } from "motion/react"
 import DisplayTask from '@/component/DisplayTask';
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
     FaSearch,
     FaFilter,
@@ -16,10 +16,18 @@ export default function AllTasksSection() {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('All');
+    const [tasks, setTasks] = useState([]);
 
-    // Fetch tasks from LocalStorage on mount
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
 
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+        try {
+            const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            setTasks(Array.isArray(storedTasks) ? storedTasks : []);
+        } catch {
+            setTasks([]);
+        }
+    }, []);
 
     // Filter tasks dynamically using useMemo based on Search Input and Status Dropdown
     const filteredTasks = useMemo(() => {
@@ -71,7 +79,15 @@ export default function AllTasksSection() {
     };
 
     return (
-        <section className="w-full max-w-7xl mt-15 mx-auto px-4 sm:px-6 md:px-8 py-12">
+        <motion.section
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1,
+                transition: { duration: 1 }
+            }}
+            className="w-full max-w-7xl mt-15 mx-auto px-4 sm:px-6 md:px-8 py-12">
             {/* Page Header */}
             <div className="mb-8">
                 <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
@@ -152,6 +168,6 @@ export default function AllTasksSection() {
                     })}
                 </div>
             )}
-        </section>
+        </motion.section>
     );
 }

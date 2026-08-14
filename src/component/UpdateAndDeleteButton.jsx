@@ -3,14 +3,15 @@
 import { UpdateModal } from "./UpdateModal";
 import { DeleteModal } from "./DeleteModal";
 
-export function UpdateAndDeleteButton({ id }) {
+export function UpdateAndDeleteButton({ task, id }) {
 
 
     return (
         <>
             <div className="flex justify-between items-center">
-                <UpdateModal id={id} />
-                <DeleteModal id={id}
+                <UpdateModal task={task} id={id} />
+                <DeleteModal
+                    id={id}
                 />
             </div>
 

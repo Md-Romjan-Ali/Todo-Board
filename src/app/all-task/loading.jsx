@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function DisplayTaskSkeleton({ count = 3 }) {
     return (
-        <div className="w-full">
+        <div className="w-full max-w-7xl mx-auto">
             {/* Top Header Section with Left & Right Text Skeletons */}
             <div className="flex items-center justify-between gap-4 mb-8">
                 {/* Left Side: Title & Subtitle */}

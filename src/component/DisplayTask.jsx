@@ -52,7 +52,7 @@ const DisplayTask = ({ task, statusStyle, priorityStyle }) => {
                     </div>
                 </div>
                 <div className='mt-5'>
-                    <UpdateAndDeleteButton id={task.id} />
+                    <UpdateAndDeleteButton task={task} id={task?.id} />
                 </div>
 
             </div>

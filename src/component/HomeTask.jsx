@@ -1,6 +1,7 @@
 'use client';
-
+import { motion } from "motion/react"
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import {
     FaArrowRight,
     FaClock,
@@ -13,7 +14,18 @@ import DisplayTask from './DisplayTask';
 // Default initial tasks array if LocalStorage is empty
 export default function TasksSection() {
 
-    const tasks = JSON.parse(localStorage.getItem("tasks") || [])
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        try {
+            const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+            setTasks(Array.isArray(storedTasks) ? storedTasks : []);
+        } catch {
+            setTasks([]);
+        }
+    }, []);
 
     // Helper for Status Badge Styling
     const getStatusBadge = (status) => {
@@ -49,7 +61,15 @@ export default function TasksSection() {
     };
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12">
+        <motion.section
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1,
+                transition: { duration: 1 }
+            }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12">
             {/* Section Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                 <div>
@@ -96,6 +116,6 @@ export default function TasksSection() {
                     })}
                 </div>
             )}
-        </section>
+        </motion.section>
     );
 }

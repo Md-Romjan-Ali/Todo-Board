@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📋 Todo Board
 
-## Getting Started
+A modern and responsive task management application built with **Next.js**, **React**, **Tailwind CSS**, and **HeroUI**. This application allows users to create, manage, update, search, and organize tasks efficiently using the browser's **Local Storage**.
 
-First, run the development server:
+## 🌐 Live Demo
+
+https://todo-board-theta.vercel.app
+
+---
+
+## ✨ Features
+
+- ➕ Create new tasks
+- 📝 Update existing tasks
+- 🗑️ Delete tasks
+- 🔍 Search tasks by title
+- 🎯 Filter tasks by status
+- ⚡ Priority levels (Low, Medium, High)
+- 📅 Due date support
+- 📊 Recent Tasks section
+- 💾 LocalStorage based persistence
+- 📱 Fully Responsive UI
+- 🌙 Modern Glassmorphism Design
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js (App Router)
+- React.js
+- Tailwind CSS
+- HeroUI
+- Framer Motion
+- React Icons
+
+### Storage
+
+- Browser Local Storage
+
+### Deployment
+
+- Vercel
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Md-Romjan-Ali/Todo-Board.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd todo-board
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the production server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No environment variables are required.
+
+Since this project uses **Local Storage**, there is **no backend or database configuration**.
+
+---
+
+## 📋 Task Object Structure
+
+```javascript
+{
+  id: 172355566,
+  title: "Build Portfolio",
+  description: "Complete portfolio website",
+  priority: "High",
+  status: "In Progress",
+  dueDate: "2026-08-20",
+  createdAt: "2026-08-14T10:30:22.000Z"
+}
+```
+
+---
+
+## 📸 Screens
+
+- Home Page
+- Recent Tasks
+- Add Task Modal
+- All Tasks Page
+- Search & Filter
+- Responsive Mobile Layout
+
+
+## ⭐ Future Improvements
+
+- Drag & Drop Tasks
+- Task Categories
+- Dark/Light Theme Toggle
+- Authentication
+- Cloud Database
+- Task Analytics
+- Notifications
+
+
+### ⭐ If you like this project, don't forget to give it a Star!

@@ -60,15 +60,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/tasks" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <Link href="/all-task" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     All Task
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                    Dashboard
-                                </Link>
-                            </li>
+
                         </ul>
                     </div>
 

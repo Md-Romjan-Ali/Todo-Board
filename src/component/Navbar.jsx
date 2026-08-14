@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LuLayoutDashboard } from 'react-icons/lu';
 import { BiCheckSquare, BiHome, BiMenu, BiPlus, BiX } from 'react-icons/bi';
 import { AddTaskModal } from './AddTaskModal';
 import Logo from './Logo';
+import { ThemeChanger } from './ThemeButton';
 
 const navItems = [
     { label: 'Home', href: '/' },
@@ -73,22 +73,17 @@ export default function Navbar() {
 
                     {/* Right Side: Add Task Button (Desktop) */}
                     <div className="hidden md:block">
-
-
-                        <AddTaskModal />
+                        <div className='flex items-center gap-2'>
+                            <AddTaskModal />
+                            <ThemeChanger />
+                        </div>
 
                     </div>
 
                     {/* Mobile Layout */}
                     <div className="flex items-center gap-2 md:hidden">
                         {/* Mobile Add Task Button */}
-                        <button
-                            type="button"
-                            aria-label="Add Task"
-                            className="p-2 text-white bg-linear-to-r from-indigo-600 to-purple-600 shadow-md rounded-full hover:scale-105 active:scale-95 transition-all"
-                        >
-                            <BiPlus className="w-4 h-4" />
-                        </button>
+                        <AddTaskModal />
 
                         {/* Mobile Hamburger Toggle */}
                         <button
@@ -103,6 +98,7 @@ export default function Navbar() {
                                 <BiMenu className="w-5 h-5" />
                             )}
                         </button>
+                        <ThemeChanger />
                     </div>
 
                     {/* Pure React Mobile Dropdown Menu */}
@@ -120,7 +116,7 @@ export default function Navbar() {
                                 <span>Home</span>
                             </Link>
                             <Link
-                                href="/tasks"
+                                href="/all-task"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={`flex items-center gap-2.5 px-4 py-2.5 text-sm font-medium ${pathname === '/tasks'
                                     ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30'
@@ -130,6 +126,7 @@ export default function Navbar() {
                                 <BiCheckSquare className="w-4 h-4" />
                                 <span>All Task</span>
                             </Link>
+
                         </div>
                     )}
 
